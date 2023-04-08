@@ -103,7 +103,6 @@ public class MainTest {
         System.setOut(new PrintStream(outContent));
     }
 
-
     @AfterEach
     void cleanup() {
         System.setOut(originalOut);
