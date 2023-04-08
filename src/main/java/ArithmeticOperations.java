@@ -1,27 +1,27 @@
 public class ArithmeticOperations {
-    private int a;
+    private double a;
     private String operator;
-    private int b;
+    private double b;
 
-    public ArithmeticOperations(int a, String operator, int b) {
+    public ArithmeticOperations(double a, String operator, double b) {
         this.a = a;
         this.operator = operator;
         this.b = b;
     }
 
-    public int getA() {
+    public double getA() {
         return a;
     }
 
-    public void setA(int a) {
+    public void setA(double a) {
         this.a = a;
     }
 
-    public int getB() {
+    public double getB() {
         return b;
     }
 
-    public void setB(int b) {
+    public void setB(double b) {
         this.b = b;
     }
 

@@ -1,12 +1,12 @@
 import java.io.IOException;
 import java.util.List;
 
-class Test {
+class Main {
     private String[] calculatedFileLines;
 
     public static void main(String[] args) {
-        Test test = new Test();
-        test.run();
+        Main main = new Main();
+        main.run();
     }
 
     public void run() {
@@ -27,9 +27,9 @@ class Test {
     private void parseAndCalculateFileLines(List<String> fileLines) {
         for (int i = 0; i < fileLines.size(); i++) {
             String[] splitLineElements = fileLines.get(i).split("\\s");
-            int a = Integer.parseInt(splitLineElements[0]);
+            double a = Double.parseDouble(splitLineElements[0]);
             String operator = splitLineElements[1];
-            int b = Integer.parseInt(splitLineElements[2]);
+            double b = Double.parseDouble(splitLineElements[2]);
             ArithmeticOperations arithmeticOperations = new ArithmeticOperations(a, operator, b);
             double result = arithmeticOperations.calculateWithOperator();
             calculatedFileLines[i] = fileLines.get(i) + " = " + result;

@@ -1,3 +1,4 @@
+import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,6 +7,7 @@ import java.io.*;
 
 import static org.assertj.core.api.Assertions.anyOf;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.contains;
 
 public class MainTest {
 
@@ -19,7 +21,7 @@ public class MainTest {
         writeToInputFile(fileContent);
 
         // when
-        Test.main(new String[]{});
+        Main.main(new String[]{});
 
         // then
         assertThat(outContent.toString()).satisfiesAnyOf(
@@ -35,7 +37,7 @@ public class MainTest {
         writeToInputFile(fileContent);
 
         // when
-        Test.main(new String[]{});
+        Main.main(new String[]{});
 
         // then
         assertThat(outContent.toString()).satisfiesAnyOf(
@@ -51,7 +53,7 @@ public class MainTest {
         writeToInputFile(fileContent);
 
         // when
-        Test.main(new String[]{});
+        Main.main(new String[]{});
 
         // then
         assertThat(outContent.toString()).satisfiesAnyOf(
@@ -67,7 +69,7 @@ public class MainTest {
         writeToInputFile(fileContent);
 
         // when
-        Test.main(new String[]{});
+        Main.main(new String[]{});
 
         // then
         assertThat(outContent.toString()).contains("5.5 + 12.1 = 17.6");
@@ -80,7 +82,7 @@ public class MainTest {
         writeToInputFile(fileContent);
 
         // when
-        Test.main(new String[]{});
+        Main.main(new String[]{});
 
         // then
         assertThat(outContent.toString()).satisfiesAnyOf(
@@ -100,7 +102,6 @@ public class MainTest {
     void init() {
         System.setOut(new PrintStream(outContent));
     }
-
 
     @AfterEach
     void cleanup() {
